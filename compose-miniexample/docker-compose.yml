@@ -1,0 +1,15 @@
+version: "3"
+services:
+  tomcat:
+    image: tomcat
+    restart: always
+    container_name: tomcat
+    depends_on:
+      - nginx
+    ports:
+     - 8080:8080
+  nginx:
+    image: nginx
+    container_name: nginx
+    ports:
+      - 80:80
